@@ -36,9 +36,119 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px;
-    padding: 100px;
 }
 .ratings img{
     height: 40px;
     margin: 0px 20px;
+}
+
+
+.team-section {
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #023047;
+}
+.team-section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #023047;
+}
+.team-container {
+    margin: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    padding: 0; 
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container:hover .social-icons {
+    opacity: 1;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%); 
+}
+
+.team-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.team-info .line {
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #219EBC;
+    margin: 5px auto;
+}
+
+.team-info p {
+    margin-top: 15px;
+    font-size:12px;
+    color: #666;
 }
