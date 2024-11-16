@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .header {
     display: flex;
     align-items: center;
@@ -16,7 +12,7 @@
     padding: 15px 20px;
 }
 
-.header img {
+.logoContainer img {
     height: 50px;
 }
 
@@ -52,4 +48,46 @@
 .logIn {
     background-color: #023047;
     color: white;
+}
+
+
+.hamburgerMenu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: aliceblue;
+        box-shadow: 0 2px 6px #023047;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .navLinks a {
+        padding: 10px 20px;
+        display: block;
+        font-size: 16px;
+    }
+
+    .registerButtons {
+        display: none;
+    }
+
+    .hamburgerMenu {
+        display: block;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
 }

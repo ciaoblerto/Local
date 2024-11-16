@@ -54,8 +54,11 @@ body {
     margin-bottom: 20px;
     color: #023047;
 }
-.team-section p {
-    font-size: 20px;
+.team-section h2,p {
+    margin: 30px;
+}
+.team-section h2 {
+    font-size: 60px;
     margin-bottom: 20px;
     color: #023047;
 }
