@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .header {
     display: flex;
     align-items: center;
@@ -25,6 +29,10 @@
     color: #023047;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
+}
+.navLinks a:hover {
+    color: #0b6b9b; 
 }
 
 .registerButtons {
@@ -35,7 +43,7 @@
 .signIn, .logIn {
     padding: 5px 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
