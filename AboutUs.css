@@ -42,7 +42,71 @@ body {
     margin: 0px 20px;
 }
 
+/* pjesa e values section*/
+.ourValues {
+    padding: 40px 20px; 
+    text-align: center;
+}
 
+.valuesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 80%;
+}
+
+.airport-image {
+    max-width: 460px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    max-width: 600px;
+    color: #023047;
+    padding: 0 20px; 
+    text-align: center;
+}
+
+.text h2 {
+    font-size: 36px;
+    line-height: 1.4;
+    margin: 0 0 15px 0; 
+    padding: 0; 
+}
+
+.text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0; 
+    padding: 0; 
+}
+
+@media (min-width: 600px) {
+    .valuesContainer {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center; 
+    }
+
+    .text {
+        text-align: left; 
+    }
+}
+
+/* pjesa e team section*/
 .team-section {
     margin: 0 auto;
     padding: 40px 20px;
