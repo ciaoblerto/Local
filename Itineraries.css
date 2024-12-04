@@ -50,6 +50,11 @@ body{
     transform: rotate(-20deg) translateX(-300px); 
     animation: fly-in 2s ease-in-out forwards; 
 }
+@media (max-width: 768px) {
+    .plane-image {
+        display: none; 
+    }
+}
 
 
 @keyframes fly-in {

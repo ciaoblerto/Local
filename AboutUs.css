@@ -16,30 +16,17 @@ body {
     align-content: center;
     text-align: center;
     background: linear-gradient(180deg, #8ECAE6, #F5FDFF);
-    padding: 30px;
+    padding: 40px;
   }
   
 .about-text{
     color: #023047;
-    padding: 30px;
-    margin: 10px;
 }
 .about-text h1{
     font-size: 70px;
-    padding: 20px;
 }
 .about-text p{
     font-size: 20px;
-    padding: 20px;
-}
-.ratings{
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-.ratings img{
-    height: 40px;
-    margin: 0px 20px;
 }
 
 /* pjesa e values section*/
@@ -50,59 +37,59 @@ body {
 
 .valuesContainer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center;
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
-    align-items: center; 
-    justify-content: center; 
 }
 
 .images {
+    flex: 1 1 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 80%;
 }
 
 .airport-image {
-    max-width: 460px;
+    width: 100%; 
+    max-width: 460px; 
+    height: auto; 
     border-radius: 10px;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .text {
+    flex: 1 1 100%; 
     max-width: 600px;
     color: #023047;
-    padding: 0 20px; 
-    text-align: center;
+    padding: 0 20px;
+    text-align: center; 
 }
 
 .text h2 {
-    font-size: 36px;
+    font-size: 28px;
     line-height: 1.4;
-    margin: 0 0 15px 0; 
-    padding: 0; 
+    margin-bottom: 15px;
 }
 
 .text p {
     font-size: 16px;
     line-height: 1.6;
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
 }
 
 @media (min-width: 600px) {
     .valuesContainer {
-        flex-direction: row;
-        gap: 40px;
-        align-items: center; 
+        flex-wrap: nowrap; 
+        justify-content: space-between;
     }
 
     .text {
         text-align: left; 
+    }
+    .images, .text {
+        flex: 1 1 45%; 
     }
 }
 
