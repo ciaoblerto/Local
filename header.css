@@ -13,10 +13,12 @@
     width: 100%;
     /*box-shadow: 0 2px 6px #023047; this is what i meant, nashta without??(e diskutojm)*/
     z-index: 1000;
+    box-shadow: 0 2px 6px #023047;
+    z-index: 10;
     padding: 15px 20px;
 }
 
-.header img {
+.logoContainer img {
     height: 50px;
 }
 
@@ -29,6 +31,10 @@
     color: #023047;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
+}
+.navLinks a:hover {
+    color: #0b6b9b; 
 }
 
 .registerButtons {
@@ -39,7 +45,7 @@
 .signIn, .logIn {
     padding: 5px 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -52,4 +58,46 @@
 .logIn {
     background-color: #023047;
     color: white;
+}
+
+
+.hamburgerMenu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: aliceblue;
+        box-shadow: 0 2px 6px #023047;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .navLinks a {
+        padding: 10px 20px;
+        display: block;
+        font-size: 16px;
+    }
+
+    .registerButtons {
+        display: none;
+    }
+
+    .hamburgerMenu {
+        display: block;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
 }

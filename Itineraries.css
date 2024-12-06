@@ -8,6 +8,68 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #F5FDFF;
 }
+.itineraries-header {
+    background-image: url("https://t4.ftcdn.net/jpg/01/76/01/51/360_F_176015185_mPGNcaL7WygUCaaNWR5nhiC08H4tboBE.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 60px;
+    height:auto;
+    transition: all 0.8s ease-in-out;
+}
+
+.header-text {
+    flex: 1;
+    color: #023047;
+}
+
+.header-text h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.header-text p {
+    font-size: 20px;
+    color:  #023047;
+}
+
+.header-images {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plane-image {
+    height: 200px;
+    position: absolute;
+    z-index: 1; 
+    transform: rotate(-20deg) translateX(-300px); 
+    animation: fly-in 2s ease-in-out forwards; 
+}
+@media (max-width: 768px) {
+    .plane-image {
+        display: none; 
+    }
+}
+
+
+@keyframes fly-in {
+    0% {
+        transform: rotate(-20deg) translateX(-300px); 
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1; 
+    }
+    100% {
+        transform: rotate(0deg) translateX(0);
+    }
+}
+
 .pop-now{
     width: 100%;
     padding: 20px;

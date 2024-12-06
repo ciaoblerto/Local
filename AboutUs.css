@@ -16,33 +16,84 @@ body {
     align-content: center;
     text-align: center;
     background: linear-gradient(180deg, #8ECAE6, #F5FDFF);
-    padding: 30px;
+    padding: 40px;
   }
   
 .about-text{
     color: #023047;
-    padding: 30px;
-    margin: 10px;
 }
 .about-text h1{
     font-size: 70px;
-    padding: 20px;
 }
 .about-text p{
     font-size: 20px;
-    padding: 20px;
 }
-.ratings{
+
+/* pjesa e values section*/
+.ourValues {
+    padding: 40px 20px; 
+    text-align: center;
+}
+
+.valuesContainer {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.images {
+    flex: 1 1 100%; 
     display: flex;
     justify-content: center;
-    margin: 20px;
-}
-.ratings img{
-    height: 40px;
-    margin: 0px 20px;
+    align-items: center;
 }
 
+.airport-image {
+    width: 100%; 
+    max-width: 460px; 
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
 
+.text {
+    flex: 1 1 100%; 
+    max-width: 600px;
+    color: #023047;
+    padding: 0 20px;
+    text-align: center; 
+}
+
+.text h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (min-width: 600px) {
+    .valuesContainer {
+        flex-wrap: nowrap; 
+        justify-content: space-between;
+    }
+
+    .text {
+        text-align: left; 
+    }
+    .images, .text {
+        flex: 1 1 45%; 
+    }
+}
+
+/* pjesa e team section*/
 .team-section {
     margin: 0 auto;
     padding: 40px 20px;
@@ -54,8 +105,11 @@ body {
     margin-bottom: 20px;
     color: #023047;
 }
-.team-section p {
-    font-size: 20px;
+.team-section h2,p {
+    margin: 30px;
+}
+.team-section h2 {
+    font-size: 60px;
     margin-bottom: 20px;
     color: #023047;
 }
