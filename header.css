@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    box-shadow: 0 2px 6px #023047;
+    /*box-shadow: 0 2px 6px #023047; this is what i meant, nashta without??(e diskutojm)*/
     z-index: 1000;
     padding: 15px 20px;
 }
