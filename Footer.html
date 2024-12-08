@@ -9,7 +9,7 @@
 <body>
     <footer>
       <div class="socials">
-        <img class="social-icon" src="./assets/Insta-Logo.png" alt="Instalogo">
+        <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">
         <img class="social-icon" src="./assets/FB2-logo.png" alt="Xlogo">
         <img class="social-icon" src="./assets/Youtube-logo.png" alt="Youtubelogo">
         <img class="social-icon" src="./assets/Linkedin-logo-black.png" alt="Linkedinlogo">
@@ -22,6 +22,10 @@
             <li><a href=""><b>Our team</b></a></li>
         </ul>
       </div>
-</footer>
+      <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
+    </footer>
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
