@@ -6,6 +6,11 @@
 footer{
     background-color: #222;
 }
+footer, #copyright {
+    width: 100%;
+    margin: 0; 
+    position: relative; 
+}
 .footerContainer{
     width: 100%;
     padding: 70px 30px 20px;
