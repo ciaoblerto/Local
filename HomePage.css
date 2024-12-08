@@ -8,6 +8,12 @@ body {
     background-color: #F5FDFF;
 }
 
+.logIn a{
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
 /*pjesa ehero headeri css */
 .hero-section {
     display: flex;
