@@ -160,3 +160,49 @@ h2 {
 .view-more-btn:hover {
     transform: translateY(-4px);
 }
+
+/* ========================================================================================================================================== */
+
+#testimonials-container{
+    background-color: #023047;
+}
+
+#testimonials-title{
+    text-align: center;
+    padding: 20px ;
+}
+
+.textboxes{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.textboxes-text{
+    background-image: url(./assets/textbox.png);
+    background-position: center;
+    background-size: cover; 
+}
+
+.textboxes-text {
+    padding: 130px;
+}
+.testimonials-pfps{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.placeholder{
+    background-image: url(./assets/pfpplaceholder.webp);
+    background-position: center;
+    background-size: cover; 
+    background-color: gray;
+    border-radius: 100%;
+}
+
+.placeholder {
+    padding: 70px;
+}
+
+
