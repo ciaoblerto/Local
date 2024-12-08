@@ -6,11 +6,12 @@
     <title>About Us</title>
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="AboutUs.css">
+    <link rel="stylesheet" href="Footer.css">
 </head>
 <body>
     <header class="header">
         <div class="logoContainer">
-            <img src="/assets/logo.png" alt="localLogo">
+            <img src="./assets/logo.png" alt="localLogo">
         </div>
 
         <nav class="navLinks">
@@ -19,8 +20,8 @@
             <a href="AboutUs.html">About Us</a>
         </nav>
         <div class="registerButtons">
-            <button class="signIn">Sign In</button>
-            <button class="logIn">Log In</button>
+            <button class="signIn">Sign Up</button>
+            <button class="logIn"><a href="LogIn.html">Log In</a></button>
         </div>
         <button class="hamburgerMenu" aria-label="Toggle menu">
             ☰
@@ -102,6 +103,26 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="socials">
+          <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">
+          <img class="social-icon" src="./assets/FB2-logo.png" alt="Xlogo">
+          <img class="social-icon" src="./assets/Youtube-logo.png" alt="Youtubelogo">
+          <img class="social-icon" src="./assets/Linkedin-logo-black.png" alt="Linkedinlogo">
+        </div>
+        <div class="footerContainer">
+          <ul>
+              <li><a href="HomePage.html"><b>Home</b></a></li>
+              <li><a href="Itineraries.html"><b>Itineraries</b></a></li>
+              <li><a href="AboutUs.html"><b>About us</b></a></li>
+              <li><a href=""><b>Our team</b></a></li>
+          </ul>
+        </div>
+        <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
+      </footer>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
     <script src="script.js"></script> 
 </body>
 </html>

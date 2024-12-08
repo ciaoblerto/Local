@@ -155,3 +155,7 @@ body{
 .hidden {
     display: none;
 }
+.logIn a{
+    color: white;
+    text-decoration: none;
+}
