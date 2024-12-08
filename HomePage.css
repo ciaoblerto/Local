@@ -160,6 +160,9 @@ h2 {
 .view-plan-btn:hover {
     background-color: #219EBC;
 }
+.plane-dep{
+    height: 20px;
+}
 .view-more-btn {
     margin: 60px;
     padding: 18px 20px;
