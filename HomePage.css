@@ -165,11 +165,15 @@ h2 {
 
 #testimonials-container{
     background-color: #023047;
+    backdrop-filter: blur(100px);
+    height: 100vh;
 }
 
 #testimonials-title{
     text-align: center;
     padding: 20px ;
+    color: white;
+    margin-bottom: 50px;
 }
 
 .textboxes{
@@ -182,15 +186,16 @@ h2 {
     background-image: url(./assets/textbox.png);
     background-position: center;
     background-size: cover; 
-}
-
-.textboxes-text {
-    padding: 130px;
+    padding: 20px;
+    text-align: center;
+    width: 290px;
+    height: 180px;
 }
 .testimonials-pfps{
     display: flex;
     justify-content: center;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
 .placeholder{
@@ -199,10 +204,15 @@ h2 {
     background-size: cover; 
     background-color: gray;
     border-radius: 100%;
+    padding: 80px;
 }
 
-.placeholder {
-    padding: 70px;
+.smallinfo{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
 }
 
-
+.smallinfo p{
+    color:rgb(179, 179, 179);
+}
