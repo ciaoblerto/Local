@@ -79,29 +79,14 @@
     
     <section id="testimonials-container">
         <h1 id="testimonials-title">What Users Say About Us</h1>
-    
-        <div class="testimonials">
-            <div class="testimonial">
-                <div class="placeholder" style="background-image: url(./assets/kit.jpg);"></div>
-                <p class="textboxes-text">Ever since finding out about this website back in 2017, I have used it to plan trips with my family, and we could not be more satisfied.</p>
-                <p class="smallinfo-text">I defended Castle Black</p>
-            </div>
-    
-            <div class="testimonial">
-                <div class="placeholder" style="background-image: url(./assets/President_Barack_Obama.jpg);"></div>
-                <p class="textboxes-text">This platform has been an amazing companion for our travel planning. It's user-friendly and has all the tools we need.</p>
-                <p class="smallinfo-text">I am Castle Black</p>
-            </div>
-    
-            <div class="testimonial">
-                <div class="placeholder" style="background-image: url(./assets/chris.webp);"></div>
-                <p class="textboxes-text">The recommendations and trip planning features are unmatched! My family loves it.</p>
-                <p class="smallinfo-text">I hate Castle Black</p>
+        <div class="testimonials-slider">
+            <div class="testimonial" id="slideshow">
+                <div class="placeholder" id="placeholder"></div>
+                <p class="textboxes-text" id="textboxes-text"></p>
+                <p class="smallinfo-text" id="smallinfo-text"></p>
             </div>
         </div>
-    </section>
-    
-  
+        <button id="next-btn">Next testimonial</button>
     </section>
     <footer>
         <div class="socials">
@@ -120,10 +105,7 @@
         </div>
         <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
       </footer>
-  <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-  </script>
-
+      
     <script src="script.js"></script>
 </body>
 </html>
