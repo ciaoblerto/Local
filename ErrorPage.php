@@ -8,24 +8,7 @@
     <link rel="stylesheet" href="ErrorPage.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logoContainer">
-            <img src="./assets/logo.png" alt="localLogo">
-        </div>
-
-        <nav class="navLinks">
-            <a href="HomePage.html">Home</a>
-            <a href="Itineraries.html">Itineraries</a>
-            <a href="AboutUs.html">About Us</a>
-        </nav>
-        <div class="registerButtons">
-            <button class="signIn">Sign In</button>
-            <button class="logIn">Log In</button>
-        </div>
-        <button class="hamburgerMenu" aria-label="Toggle menu">
-            ☰
-        </button>
-    </header> 
+    <?php include ('components/NavBar.html')?>
     <div class="errorContainer">
         <img src="./assets/404.png" alt="404image">
         <div class="explanation">

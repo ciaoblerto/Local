@@ -9,24 +9,7 @@
     <link rel="stylesheet" href="Footer.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logoContainer">
-            <img src="./assets/logo.png" alt="localLogo">
-        </div>
-
-        <nav class="navLinks">
-            <a href="HomePage.html">Home</a>
-            <a href="Itineraries.html">Itineraries</a>
-            <a href="AboutUs.html">About Us</a>
-        </nav>
-        <div class="registerButtons">
-            <button class="signIn"><a href="Register.html">Sign Up</a></button>
-            <button class="logIn"><a href="LogIn.html">Log In</a></button>
-        </div>
-        <button class="hamburgerMenu" aria-label="Toggle menu">
-            ☰
-        </button>
-    </header> 
+<?php include ('components/NavBar.html')?>
     <section class="about-header">
         <section class="about-text">
             <h1>About Us</h1>
