@@ -130,6 +130,6 @@
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
-      <script src="script.js"></script> 
+      <script src="Skript.js"></script> 
 </body>
 </html>

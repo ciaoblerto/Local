@@ -12,7 +12,6 @@
 
 <body>
     <?php include ('components/NavBar.html')?>
-
     <section class ="hero-section">
         <div class="background-image"></div>
         <div class="search-container">
@@ -87,8 +86,7 @@
           </ul>
         </div>
         <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
-      </footer>
-      
-    <script src="script.js"></script>
+    </footer>
+    <script src="Skript.js"></script>
 </body>
 </html>

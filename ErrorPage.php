@@ -18,5 +18,5 @@
         <a href="HomePage.html" class="redirect-button">Home Page</a>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="Skript.js"></script>
 </html>

@@ -4,6 +4,7 @@ document.querySelector(".hamburgerMenu").addEventListener("click", () => {
 });
 
 //sliderit
+
 var i = 0; 
 var testimonials = [
     {
