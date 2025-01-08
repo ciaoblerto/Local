@@ -16,7 +16,7 @@
         <div class="search-container">
         <h1>Travel, like a local</h1>
         <h2>&nbspUse our website to create your perfect <br> &nbspitinerary</h2>
-        <form action="ErrorPage.html">
+        <form action="ErrorPage.php">
             <div class="search">
                <span class="search-icon material-symbols-outlined">search</span>
                <input class="search-input" type="search" placeholder="Enter your destination">
