@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Template.css">
     <link rel="stylesheet" href="Footer.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
     <title>Template Itinerary</title>
 </head>
 <body>

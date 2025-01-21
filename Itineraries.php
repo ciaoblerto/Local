@@ -6,6 +6,7 @@
     <title>Itineraries</title>
     <link rel="stylesheet" href="Itineraries.css">
     <link rel="stylesheet" href="Footer.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>    
     <?php include ('components/NavBar.html')?>

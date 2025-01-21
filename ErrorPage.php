@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404!</title>
     <link rel="stylesheet" href="ErrorPage.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>
     <?php include ('components/NavBar.html')?>
