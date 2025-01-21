@@ -1,0 +1,105 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #F5FDFF;
+}
+
+
+
+h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom:26px;
+}
+
+h6 {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-top: 16px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+.fillimi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.fillimi h1 {
+    font-size: 50px;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fillimi img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.day p{
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .fillimi, .day {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 20px;
+    }
+
+    img {
+        border-radius: 5px;
+    }
+}

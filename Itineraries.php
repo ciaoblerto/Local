@@ -26,43 +26,57 @@
                 <img src="./assets/Florence.jpg" alt="Florence photo">
                 <h2>3 Days in Florence</h2>
                 <p>City of the Renaissance!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/NewYork.jpg" alt="New York photo">
                 <h2>Weekend in New York</h2>
                 <p>Visit the City that never sleeps!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/London.jpg" alt="London photo">
                 <h2>6 Days in London</h2>
                 <p>Relax in the largest metropolis in the United Kingdom!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/Paris.jpg" alt="Paris photo">
                 <h2>Day trip in Paris</h2>
                 <p>Spend 24h in the city of light!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/Paris.jpg" alt="Paris photo">
                 <h2>Day trip in Paris</h2>
                 <p>Spend 24h in the city of light!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box hidden">
                 <img src="./assets/Barcelona.jpg" alt="Barcelona photo">
                 <h2>A week in Barcelona</h2>
                 <p>Spain’s Catalonia region! </p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box hidden">
                 <img src="./assets/Sydney.jpg" alt="Sydney photo">
                 <h2>Day trip in Sydney</h2>
                 <p>Spend a day in the Emerald City!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
         </section>
         <button class="view-more-btn" onclick="showMore()">View more 

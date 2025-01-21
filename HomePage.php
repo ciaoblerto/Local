@@ -32,28 +32,37 @@
                 <img src="./assets/Florence.jpg" alt="Florence photo">
                 <h2>3 Days in Florence</h2>
                 <p>City of the Renaissance!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
+
             </div>
             <div class="box">
                 <img src="./assets/NewYork.jpg" alt="New York photo">
                 <h2>Weekend in New York</h2>
                 <p>Visit the City that never sleeps!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/London.jpg" alt="London photo">
                 <h2>6 Days in London</h2>
                 <p>Relax in the largest metropolis in the United Kingdom!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
             <div class="box">
                 <img src="./assets/Paris.jpg" alt="Paris photo">
                 <h2>Day trip in Paris</h2>
                 <p>Spend 24h in the city of light!</p>
+                <a href="Template.php">
                 <button class="view-plan-btn">View Plan</button>
+                </a>
             </div>
         </section>
-         <a href="Itineraries.html" class="view-more-btn">View more
+         <a href="Itineraries.php" class="view-more-btn">View more
             <img src="assets/plane-departure-solid.svg" alt="plane-dep" class="plane-dep">
          </a>
     </section>
