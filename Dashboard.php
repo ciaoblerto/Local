@@ -11,33 +11,22 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        img {
-            max-width: 100px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="Dashboard.css">
 </head>
 <body>
-<h1>Welcom Name <br> This is your Admin Dasboard </h1><!--Te name e qesim emrin ose emailin kur bohet databaza-->
-    <h1>Profile Dashboard</h1>
-    <!--Tabela e userave-->
-    <h1 style="text-align: center;">Itineraries Dashboard</h1>
+    <header class="header">
+            <div class="logoContainer">
+                <img src="./assets/logo.png" alt="localLogo">
+            </div>
+            <nav class="navLinks">
+                <a href="LogIn.html">Log out</a><!--Per log out-->
+            </nav>
+    </header>
+        <h1>Welcome Name <br> This is your Admin Dasboard </h1><!--Te name e qesim emrin ose emailin kur bohet databaza-->
+        <h3>Profile Dashboard</h3>
+        <hr>
+        <!--Tabela e userave-->
+         <h3>Itineraries Dashboard</h3>
     <table>
         <thead>
             <tr>
