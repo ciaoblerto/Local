@@ -1,3 +1,10 @@
+<?php
+include("database.php"); 
+
+$sql = "SELECT * FROM itineraries LIMIT 4";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,41 +34,30 @@
     </section>
 
     <section class="pop-now">
-        <span><b>Whats Popular Now!</b></span>
+        <span>
+            <b>Whats Popular Now!</b>
+        </span>
         <section class="popular-now">
-            <div class="box">
-                <img src="./assets/Florence.jpg" alt="Florence photo">
-                <h2>3 Days in Florence</h2>
-                <p>City of the Renaissance!</p>
-                <a href="Template.php">
-                <button class="view-plan-btn">View Plan</button>
-                </a>
-
-            </div>
-            <div class="box">
-                <img src="./assets/NewYork.jpg" alt="New York photo">
-                <h2>Weekend in New York</h2>
-                <p>Visit the City that never sleeps!</p>
-                <a href="Template.php">
-                <button class="view-plan-btn">View Plan</button>
-                </a>
-            </div>
-            <div class="box">
-                <img src="./assets/London.jpg" alt="London photo">
-                <h2>6 Days in London</h2>
-                <p>Relax in the largest metropolis in the United Kingdom!</p>
-                <a href="Template.php">
-                <button class="view-plan-btn">View Plan</button>
-                </a>
-            </div>
-            <div class="box">
-                <img src="./assets/Paris.jpg" alt="Paris photo">
-                <h2>Day trip in Paris</h2>
-                <p>Spend 24h in the city of light!</p>
-                <a href="Template.php">
-                <button class="view-plan-btn">View Plan</button>
-                </a>
-            </div>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="box">';
+                    if (!empty($row['Fotoja'])) {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['Fotoja']) . '" alt="' . htmlspecialchars($row['Titulli']) . ' photo">';
+                    } else {
+                        echo '<h2>No photo available</h2>';
+                    }
+                    echo '<h2>' . htmlspecialchars($row['Titulli']) . '</h2>';
+                    echo '<p>' . htmlspecialchars($row['Description']) . '</p>';
+                    echo '<a href="Template.php">';
+                    echo '<button class="view-plan-btn">View Plan</button>';
+                    echo '</a>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No itineraries available right now!</p>';
+            }
+            ?>
         </section>
          <a href="Itineraries.php" class="view-more-btn">View more
             <img src="assets/plane-departure-solid.svg" alt="plane-dep" class="plane-dep">
