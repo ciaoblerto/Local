@@ -1,5 +1,5 @@
 <?php
-include("database.php"); 
+include("CRUD/database.php"); 
 
 $sql = "SELECT * FROM itineraries"; 
 $result = $conn->query($sql);
@@ -69,13 +69,13 @@ $result = $conn->query($sql);
                     <button class="view-plan-btn">View Plan</button>
                 </div>
                 <div class="box">
-                    <img src="./assets/tokyo.png" alt="Tokyo photo">
+                    <img src="./assets/tokyo.jpg" alt="Tokyo photo">
                     <h2>2 weeks in Tokyo</h2>
                     <p>The Eastern Capital</p>
                     <button class="view-plan-btn">View Plan</button>
                 </div>
                 <div class="box">
-                    <img src="./assets/lisbon.png" alt="Lisbon photo">
+                    <img src="./assets/lisbon.jpg" alt="Lisbon photo">
                     <h2>A weekend in Lisbon</h2>
                     <p>The City of Seven Hills</p>
                     <button class="view-plan-btn">View Plan</button>
@@ -113,7 +113,7 @@ $result = $conn->query($sql);
             document.querySelector('.view-more-btn').style.display = 'none';
         }
     </script>
-
+ <script src="Skript.js"></script>
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>

@@ -57,6 +57,25 @@
         <h6>Evening</h6>
         <p>Enjoy traditional Czech beer at a local pub like Lokál, known for its fresh Pilsner and hearty fare.</p>
     </section>
+    
+    <section class="harta">
+        <h2>Interactive Map of Prague</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.482283692719!2d14.420760415484648!3d50.088040479425585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e5b0c9f7b5%3A0x400af0f6614237f!2sPrague%2C%20Czechia!5e0!3m2!1sen!2sus!4v1700646484737!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="getting-around">
+        <h2>How to Get Around in Prague</h2>
+        <p>Prague has an excellent public transportation system that is efficient, affordable, and easy to navigate. Here are your main options for getting around:</p>
+        <ul>
+            <li><strong>Trams:</strong> The tram network is extensive and a great way to explore the city. Tickets can be purchased at metro stations, newsstands, or via mobile apps.</li>
+            <li><strong>Metro:</strong> Prague's metro system has three lines (A, B, and C) and covers most major areas. It's fast and reliable for longer distances.</li>
+            <li><strong>Buses:</strong> Buses are useful for reaching areas outside the city center. They connect well with the metro and tram systems.</li>
+            <li><strong>Walking:</strong> Many of Prague’s top attractions are within walking distance of each other, especially in the city center.</li>
+            <li><strong>Ride-Sharing:</strong> Services like Uber and Bolt are available and can be a convenient alternative to taxis.</li>
+            <li><strong>Bikes and Scooters:</strong> Rental bikes and e-scooters are widely available for short trips, especially in parks and pedestrian-friendly areas.</li>
+        </ul>
+        <p>Don’t forget to validate your ticket before starting your journey on public transport to avoid fines. Enjoy exploring Prague with ease!</p>
+    </section>
     <footer>
         <div class="socials">
           <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">

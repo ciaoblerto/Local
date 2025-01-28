@@ -1,5 +1,5 @@
 <?php
-include("database.php"); 
+include("CRUD/database.php"); 
 
 $sql = "SELECT * FROM itineraries LIMIT 4";
 $result = $conn->query($sql);
