@@ -1,9 +1,3 @@
-<?php
-include("database.php"); 
-
-$sql = "SELECT * FROM itineraries"; 
-$result = $conn->query($sql);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,20 +27,37 @@ $result = $conn->query($sql);
         <p>This is what people are planning!</p>
         <section class="popular-now">
             <?php
+
+            require_once("database.php");
+            require_once("backend_itineraries.php");
+
+            error_reporting(E_ALL);
+            ini_set("display_errors",1);
+
+            $database = new Database();
+            $cards = new Itineraries($database);            
+
+            $itineraries = $cards->getAll();
+
             $counter = 0;
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+            if (!empty($itineraries) && is_array($itineraries)) {
+                foreach ($itineraries as $row) {
                     $class = $counter >= 4 ? 'box hidden' : 'box';
                     echo "<div class='{$class}'>";
+
                     if (!empty($row['Fotoja'])) {
                         echo "<img src='data:image/jpeg;base64," . base64_encode($row['Fotoja']) . "' alt='Image'>";
                     } else {
                         echo "<img src='./assets/placeholder.jpg' alt='Placeholder image'>";
                     }
+                    
                     echo "<h2>" . htmlspecialchars($row['Titulli']) . "</h2>";
                     echo "<p>" . htmlspecialchars($row['Description']) . "</p>";
+                    
                     echo "<a href='Template.php'><button class='view-plan-btn'>View Plan</button></a>";
+                    
                     echo "</div>";
+                    
                     $counter++;
                 }
             } else {

@@ -1,10 +1,3 @@
-<?php
-include("database.php"); 
-
-$sql = "SELECT * FROM itineraries LIMIT 4";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +32,20 @@ $result = $conn->query($sql);
         </span>
         <section class="popular-now">
             <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+            require('database.php');
+            require('backend_itineraries.php');
+
+            error_reporting(E_ALL);
+            ini_set("display_errors",1);
+
+            $database = new Database();
+            $cards = new Itineraries($database);            
+
+            $itineraries = $cards->getAll();
+
+
+            if (!empty($itineraries) && is_array($itineraries)) {
+                foreach ($itineraries as $row) {
                     echo '<div class="box">';
                     if (!empty($row['Fotoja'])) {
                         echo '<img src="data:image/jpeg;base64,' . base64_encode($row['Fotoja']) . '" alt="' . htmlspecialchars($row['Titulli']) . ' photo">';

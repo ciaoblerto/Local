@@ -1,10 +1,3 @@
-<?php
-include("database.php");
-
-$sql = "SELECT * FROM itineraries";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,18 +30,31 @@ $result = $conn->query($sql);
             </tr>
         </thead>
         <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+        
+        <?php
+        
+            require_once("database.php");
+            require_once("backend_itineraries.php");
+
+            error_reporting(E_ALL);
+            ini_set("display_errors",1);
+
+            $database = new Database();
+            $cards = new Itineraries($database);            
+
+            $itineraries = $cards->getAll();
+
+            if (count($itineraries) > 0) {
+                foreach ($itineraries as $itinerarie) {
                     echo "<tr>";
-                    echo "<td>" . $row['Id'] . "</td>";
-                    if (!empty($row['Fotoja'])) {
-                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['Fotoja']) . "' alt='Image'></td>";
+                    echo "<td>" . $itinerarie['Id'] . "</td>";
+                    if (!empty($itinerarie['Fotoja'])) {
+                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($itinerarie['Fotoja']) . "' alt='Image'></td>";
                     } else {
                         echo "<td>No Image</td>";
                     }
-                    echo "<td>" . htmlspecialchars($row['Titulli']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['Description']) . "</td>";
+                    echo "<td>" . htmlspecialchars($itinerarie['Titulli']) . "</td>";
+                    echo "<td>" . htmlspecialchars($itinerarie['Description']) . "</td>";
                     echo "</tr>";
                 }
             } else {
