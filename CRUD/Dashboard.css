@@ -28,20 +28,6 @@ body {
     height: 50px;
 }
 
-.navLinks {
-    display: flex;
-    gap: 20px;
-}
-
-.navLinks a {
-    color: #023047;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-.navLinks a:hover {
-    color: #0b6b9b; 
-}
 
 h1 {
     text-align: center;
@@ -91,7 +77,6 @@ table img {
     display: block;
     margin: 0 auto;
 }
-
 @media (max-width: 768px) {
     table {
         width: 100%;
