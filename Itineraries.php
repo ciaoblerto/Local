@@ -28,8 +28,8 @@
         <section class="popular-now">
             <?php
 
-            require_once("database.php");
-            require_once("backend_itineraries.php");
+            require_once("CRUD/database.php");
+            require_once("CRUD/backend_itineraries.php");
 
             error_reporting(E_ALL);
             ini_set("display_errors",1);
@@ -80,13 +80,13 @@
                     <button class="view-plan-btn">View Plan</button>
                 </div>
                 <div class="box">
-                    <img src="./assets/tokyo.png" alt="Tokyo photo">
+                    <img src="./assets/tokyo.jpg" alt="Tokyo photo">
                     <h2>2 weeks in Tokyo</h2>
                     <p>The Eastern Capital</p>
                     <button class="view-plan-btn">View Plan</button>
                 </div>
                 <div class="box">
-                    <img src="./assets/lisbon.png" alt="Lisbon photo">
+                    <img src="./assets/lisbon.jpg" alt="Lisbon photo">
                     <h2>A weekend in Lisbon</h2>
                     <p>The City of Seven Hills</p>
                     <button class="view-plan-btn">View Plan</button>
@@ -124,7 +124,7 @@
             document.querySelector('.view-more-btn').style.display = 'none';
         }
     </script>
-
+ <script src="Skript.js"></script>
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>

@@ -32,8 +32,8 @@
         </span>
         <section class="popular-now">
             <?php
-            require('database.php');
-            require('backend_itineraries.php');
+            require('CRUD/database.php');
+            require('CRUD/backend_itineraries.php');
 
             error_reporting(E_ALL);
             ini_set("display_errors",1);
