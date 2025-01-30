@@ -1,10 +1,13 @@
 <?php
-include_once 'ItineraryRepository.php';
 include_once 'database.php';
+include_once 'ItineraryRepository.php';
+
+$database = new Database();
+$conn = $database->getConnection();
 
 $itineraryId = $_GET['id'];
-$itineraryRepository = new ItineraryRepository($conn);
 
+$itineraryRepository = new ItineraryRepository($conn);
 $itinerary = $itineraryRepository->getItineraryById($itineraryId);
 
 if (isset($_POST['editBtn'])) {
@@ -30,13 +33,13 @@ if (isset($_POST['editBtn'])) {
     <h3>Edit Itinerary</h3>
     <form action="" method="post">
         <label for="fotoja">Photo:</label>
-        <input type="text" name="fotoja" id="fotoja" value="<?= $itinerary['Fotoja'] ?>"> <br><br>
+        <input type="text" name="fotoja" id="fotoja" value="<?= htmlspecialchars($itinerary['Fotoja']) ?>"> <br><br>
 
         <label for="titulli">Title:</label>
-        <input type="text" name="titulli" id="titulli" value="<?= $itinerary['Titulli'] ?>"> <br><br>
+        <input type="text" name="titulli" id="titulli" value="<?= htmlspecialchars($itinerary['Titulli']) ?>"> <br><br>
 
         <label for="description">Description:</label>
-        <textarea name="description" id="description"><?= $itinerary['Description'] ?></textarea> <br><br>
+        <textarea name="description" id="description"><?= htmlspecialchars($itinerary['Description']) ?></textarea> <br><br>
 
         <input type="submit" name="editBtn" value="Save Changes">
     </form>

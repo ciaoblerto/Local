@@ -9,75 +9,48 @@ class ItineraryRepository {
     }
 
     function insertItinerary($itineraries) {
-        $conn = $this->connection;
-
-        $id = $itineraries->getId();
-        $fotoja = $itineraries->getFotoja();
-        $titulli = $itineraries->getTitulli();
-        $description = $itineraries->getDescription();
-
-        $sql = "INSERT INTO itineraries (Id, Fotoja, Titulli, Description) VALUES (?, ?, ?, ?)";
-        $statement = $conn->prepare($sql);
-        $statement->bind_param($id, $fotoja, $titulli, $description);
-        $statement->execute();
+        $sql = "INSERT INTO itineraries (Id, Fotoja, Titulli, Description) VALUES (:id, :fotoja, :titulli, :description)";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute([
+            ':id' => $itineraries->getId(),
+            ':fotoja' => $itineraries->getFotoja(),
+            ':titulli' => $itineraries->getTitulli(),
+            ':description' => $itineraries->getDescription()
+        ]);
 
         echo "<script>alert('Itinerary added successfully!');</script>";
     }
 
     function getAllItineraries() {
-        $conn = $this->connection;
-
         $sql = "SELECT * FROM itineraries";
-        $result = $conn->query($sql);
-
-        $itineraries = [];
-        while ($row = $result->fetch_assoc()) {
-            $itineraries[] = $row;
-        }
-
-        return $itineraries;
+        $statement = $this->connection->query($sql);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function getItineraryById($id) {
-        $conn = $this->connection;
-
-        $sql = "SELECT * FROM itineraries WHERE Id = ?";
-        $statement = $conn->prepare($sql);
-        $statement->bind_param("i", $id);
-        $statement->execute();
-        $result = $statement->get_result();
-        $itineraries = $result->fetch_assoc();
-
-        return $itineraries;
+        $sql = "SELECT * FROM itineraries WHERE Id = :id";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute([':id' => $id]);
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     function updateItinerary($id, $fotoja, $titulli, $description) {
-        $conn = $this->connection;
-    
-        $sql = "UPDATE itineraries SET Fotoja = ?, Titulli = ?, Description = ? WHERE Id = ?";
-        $statement = $conn->prepare($sql);
-    
-        if (!$statement) {
-            die("Error preparing statement: " . $conn->error);
-        }
-    
-        $statement->bind_param("sssi", $fotoja, $titulli, $description, $id);
-    
-        if (!$statement->execute()) {
-            die("Error executing query: " . $statement->error);
-        }
-    
+        $sql = "UPDATE itineraries SET Fotoja = :fotoja, Titulli = :titulli, Description = :description WHERE Id = :id";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute([
+            ':fotoja' => $fotoja,
+            ':titulli' => $titulli,
+            ':description' => $description,
+            ':id' => $id
+        ]);
+
         echo "<script>alert('Itinerary updated successfully!');</script>";
     }
-    
 
     function deleteItinerary($id) {
-        $conn = $this->connection;
-
-        $sql = "DELETE FROM itineraries WHERE Id = ?";
-        $statement = $conn->prepare($sql);
-        $statement->bind_param("i", $id);
-        $statement->execute();
+        $sql = "DELETE FROM itineraries WHERE Id = :id";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute([':id' => $id]);
 
         echo "<script>alert('Itinerary deleted successfully!');</script>";
     }

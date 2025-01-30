@@ -56,6 +56,12 @@
                     echo "<td>" . htmlspecialchars($itinerarie['Titulli']) . "</td>";
                     echo "<td>" . htmlspecialchars($itinerarie['Description']) . "</td>";
                     echo "</tr>";
+                    echo "<td>
+                    <a href='edit.php?id=" . htmlspecialchars($itinerarie['Id']) . "'>Edit</a> | 
+                    <a href='delete.php?id=" . htmlspecialchars($itinerarie['Id']) . "' onclick='return confirm(\"Are you sure you want to delete this item?\");'>Delete</a>
+                  </td>";
+    
+            echo "</tr>";
                 }
             } else {
                 echo "<tr>
