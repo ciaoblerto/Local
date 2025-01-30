@@ -9,6 +9,29 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+<?php
+session_start();
+include_once 'Database.php';
+include_once 'User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if ($user->login($email, $password)) {
+        header("Location: HomePage.php");
+        exit;
+    } else {
+        echo "<script>alert('Invalid login credentials!');</script>";
+    }
+}
+?>
+
+
     <div class="boarding-pass">
         <div class="header">
             <div class="icon">✈️</div>
@@ -16,7 +39,7 @@
             <div class="sub-title">Boarding pass</div>
         </div>
         <div class="wrapper">
-            <form action="HomePage.php">
+            <form action="./HomePage.php">
                 <div class="input-box">
                     <label>Email</label>
                     <br>

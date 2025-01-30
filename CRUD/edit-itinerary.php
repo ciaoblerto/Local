@@ -11,15 +11,17 @@ $itineraryRepository = new ItineraryRepository($conn);
 $itinerary = $itineraryRepository->getItineraryById($itineraryId);
 
 if (isset($_POST['editBtn'])) {
-    $fotoja = $_POST['fotoja'];
     $titulli = $_POST['titulli'];
     $description = $_POST['description'];
+
+    $fotoja = !empty($_POST['fotoja']) ? $_POST['fotoja'] : $itinerary['Fotoja'];
 
     $itineraryRepository->updateItinerary($itineraryId, $fotoja, $titulli, $description);
 
     header("Location: Dashboard.php");
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ if (isset($_POST['editBtn'])) {
     <h3>Edit Itinerary</h3>
     <form action="" method="post">
         <label for="fotoja">Photo:</label>
-        <input type="text" name="fotoja" id="fotoja" value="<?= htmlspecialchars($itinerary['Fotoja']) ?>"> <br><br>
+        <input type="file" name="fotoja" id="fotoja" value="<?= htmlspecialchars($itinerary['Fotoja']) ?>"> <br><br>
 
         <label for="titulli">Title:</label>
         <input type="text" name="titulli" id="titulli" value="<?= htmlspecialchars($itinerary['Titulli']) ?>"> <br><br>
