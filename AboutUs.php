@@ -106,6 +106,6 @@
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
-    <script src="Skript.js"></script> 
+    <script src="js/Skript.js"></script> 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 include_once 'database.php';
 include_once 'Itinerary.php';
-include_once 'ItineraryRepository.php';
+include_once '../classes/ItineraryRepository.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $database = new Database();
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $fotoja = "";
 
-    // Handle image upload
+
     if (isset($_FILES['fotoja']) && $_FILES['fotoja']['error'] === UPLOAD_ERR_OK) {
         $targetDirectory = "../assets/";
         $targetFile = $targetDirectory . basename($_FILES["fotoja"]["name"]);

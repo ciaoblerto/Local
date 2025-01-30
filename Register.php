@@ -54,7 +54,7 @@
             <p>LOCAL<<<<<<<\WEBSITE<<<<<<<<<<<<<\PROJECT<<<<<<<<<<<<<<<<<<<<<\WEB<<<<<<\DESIGN<<<<<<<<\AND<<<<<<<<<<<<\ENGINEERING</p>
         </div>
     </div>
-    <script src="Skript.js">
+    <script src="js/Skript.js">
     </script>
 </body>
 </html>

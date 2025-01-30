@@ -93,6 +93,6 @@
         </div>
         <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
     </footer>
-    <script src="Skript.js"></script>
+    <script src="js/Skript.js"></script>
 </body>
 </html>

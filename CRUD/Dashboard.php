@@ -34,7 +34,7 @@
         <tbody>
             <?php
             require_once("database.php");
-            require_once("ItineraryRepository.php");
+            require_once("../classes/ItineraryRepository.php");
 
             $database = new Database();
             $repository = new ItineraryRepository($database->getConnection());

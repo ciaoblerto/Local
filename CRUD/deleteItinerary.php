@@ -3,7 +3,7 @@
 $itineraryId = $_GET['id']; 
 
 include_once 'database.php';
-include_once 'ItineraryRepository.php';
+include_once '../classes/ItineraryRepository.php';
 
 $database = new Database();
 $conn = $database->getConnection();

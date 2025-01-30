@@ -124,7 +124,7 @@
             document.querySelector('.view-more-btn').style.display = 'none';
         }
     </script>
- <script src="Skript.js"></script>
+ <script src="js/Skript.js"></script>
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
