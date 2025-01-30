@@ -70,7 +70,7 @@ input[type="password"]{
     font-size: 14px;
     transform: translateX(-12px);
 }
-#confirm-password{
+#password{
     width: 100%;
     padding: 10px;
     border:1px solid #ccc ;
