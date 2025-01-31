@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local</title>
-    <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="./css/HomePage.css">
     <link rel="icon" href="favicon.ico" type="image/ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
-    <link rel="stylesheet" href="Footer.css">
 </head>
 
 <body>
@@ -83,23 +82,8 @@
         </div>
         <button id="next-btn">Next testimonial</button>
     </section>
-    <footer>
-        <div class="socials">
-          <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">
-          <img class="social-icon" src="./assets/FB2-logo.png" alt="Xlogo">
-          <img class="social-icon" src="./assets/Youtube-logo.png" alt="Youtubelogo">
-          <img class="social-icon" src="./assets/Linkedin-logo-black.png" alt="Linkedinlogo">
-        </div>
-        <div class="footerContainer">
-          <ul>
-              <li><a href="HomePage.php"><b>Home</b></a></li>
-              <li><a href="Itineraries.php"><b>Itineraries</b></a></li>
-              <li><a href="AboutUs.php"><b>About us</b></a></li>
-              <li><a href=""><b>Our team</b></a></li>
-          </ul>
-        </div>
-        <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
-    </footer>
+        
+    <?php include ('components/Footer.html')?>
     <script src="js/Skript.js"></script>
 </body>
 </html>

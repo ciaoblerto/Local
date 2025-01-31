@@ -11,8 +11,8 @@
 <body>
 <?php
 session_start();
-include_once 'Database.php';
-include_once 'User.php';
+include_once 'database.php';
+include_once '../classes/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();

@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Template.css">
-    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="./css/Template.css">
     <link rel="icon" href="favicon.ico" type="image/ico">
     <title>Template Itinerary</title>
 </head>
@@ -76,23 +75,7 @@
         </ul>
         <p>Don’t forget to validate your ticket before starting your journey on public transport to avoid fines. Enjoy exploring Prague with ease!</p>
     </section>
-    <footer>
-        <div class="socials">
-          <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">
-          <img class="social-icon" src="./assets/FB2-logo.png" alt="Xlogo">
-          <img class="social-icon" src="./assets/Youtube-logo.png" alt="Youtubelogo">
-          <img class="social-icon" src="./assets/Linkedin-logo-black.png" alt="Linkedinlogo">
-        </div>
-        <div class="footerContainer">
-          <ul>
-              <li><a href="HomePage.html"><b>Home</b></a></li>
-              <li><a href="Itineraries.html"><b>Itineraries</b></a></li>
-              <li><a href="AboutUs.html"><b>About us</b></a></li>
-              <li><a href=""><b>Our team</b></a></li>
-          </ul>
-        </div>
-        <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
-    </footer>
+    <?php include ('components/Footer.html')?>
     <script src="js/Skript.js"></script>
 </body>
 </html>
