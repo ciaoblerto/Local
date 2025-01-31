@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include ('./components/NavBar.php')?>
+    <?php include_once ('./components/NavBar.php')?>
     <section class ="hero-section">
         <div class="background-image"></div>
         <div class="search-container">
@@ -35,8 +35,8 @@
         </span>
         <section class="popular-now">
             <?php
-            require('CRUD/database.php');
-            require('CRUD/backend_itineraries.php');
+            require_once('CRUD/database.php');
+            require_once('CRUD/backend_itineraries.php');
 
             error_reporting(E_ALL);
             ini_set("display_errors",1);
@@ -87,7 +87,7 @@
         <button id="next-btn">Next testimonial</button>
     </section>
         
-    <?php include ('components/Footer.html')?>
+    <?php include_once ('components/Footer.html')?>
     <script src="js/Skript.js"></script>
 </body>
 </html>

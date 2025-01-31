@@ -40,8 +40,7 @@ if (isset($_SESSION['email'])) {
     </header>
     
     <h1>Welcome, <?php echo $adminName; ?>! <br> This is your Admin Dashboard</h1>
-    <h3>Profile Dashboard</h3>
-    <hr>
+   
 
     <h3>Itineraries Dashboard</h3>
     <table>
@@ -92,7 +91,22 @@ if (isset($_SESSION['email'])) {
         </table>
         <hr>
 
-    
+        <div classname="cr-it">
+        <h3>Create Itinerary</h3>
+        <form action="create-itinerary.php" method="POST" enctype="multipart/form-data">
+            <label for="titulli">Title:</label>
+            <input type="text" name="titulli" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" required></textarea>
+
+            <label for="fotoja">Upload Image:</label>
+            <input type="file" name="fotoja" accept="image/*" required>
+
+            <button type="submit">Create Itinerary</button>
+        </form>        
+    </div>
+<hr>
         <h3>Users Dashboard</h3>
         <table>
             <thead>
@@ -134,21 +148,6 @@ if (isset($_SESSION['email'])) {
 
     </table>
     <hr>
-    <div classname="cr-it">
-        <h3>Create Itinerary</h3>
-        <form action="create-itinerary.php" method="POST" enctype="multipart/form-data">
-            <label for="titulli">Title:</label>
-            <input type="text" name="titulli" required>
-
-            <label for="description">Description:</label>
-            <textarea name="description" required></textarea>
-
-            <label for="fotoja">Upload Image:</label>
-            <input type="file" name="fotoja" accept="image/*" required>
-
-            <button type="submit">Create Itinerary</button>
-        </form>        
-    </div>
-
+    
 </body>
 </html>

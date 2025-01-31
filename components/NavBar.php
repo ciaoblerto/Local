@@ -1,3 +1,20 @@
+<?php
+require_once("./CRUD/database.php");
+require_once("./classes/User.php");
+
+$database = new Database();
+$connection = $database->getConnection();
+$user = new User($connection);
+
+$adminName = '';
+if (isset($_SESSION['email'])) {
+    $userData = $user->getUserByEmail($_SESSION['email']);
+    if ($userData && isset($userData['name'])) {
+        $adminName = htmlspecialchars($userData['name']);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +36,10 @@
         </nav>
 
         <div class="registerButtons">
+            <?php if (!empty($adminName)): ?>
+                <span class="userWelcome">Welcome, <?php echo $adminName; ?>!</span>
+            <?php endif; ?>
+
             <?php if (isset($_SESSION['email'])): ?>
                 <button class="logOut"><a href="./CRUD/LogOut.php">Log Out</a></button>
             <?php else: ?>
