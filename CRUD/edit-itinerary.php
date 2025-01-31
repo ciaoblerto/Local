@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ErrorPage.php");
+    exit();
+}
 include_once 'database.php';
 include_once '../classes/ItineraryRepository.php';
 
@@ -30,6 +35,7 @@ if (isset($_POST['editBtn'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Itinerary</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
     <style>
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

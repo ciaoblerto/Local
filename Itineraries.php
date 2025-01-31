@@ -1,4 +1,11 @@
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("Location: Register.php");
+        exit();
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +16,7 @@
     <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>    
-    <?php include('components/NavBar.html'); ?>
+    <?php include('components/NavBar.php'); ?>
 
     <section class="itineraries-header">
         <div class="header-text">

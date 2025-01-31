@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
 </head>
 
 <body>
-    <?php include ('components/NavBar.html')?>
+    <?php include ('./components/NavBar.php')?>
     <section class ="hero-section">
         <div class="background-image"></div>
         <div class="search-container">

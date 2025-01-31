@@ -1,3 +1,25 @@
+<?php 
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../ErrorPage.php");
+    exit();
+}
+
+require_once("../CRUD/database.php");
+require_once("../classes/User.php");
+
+$database = new Database();
+$connection = $database->getConnection();
+$user = new User($connection);
+
+if (isset($_SESSION['email'])) {
+    $userData = $user->getUserByEmail($_SESSION['email']);
+    if ($userData && isset($userData['name'])) {
+        $adminName = htmlspecialchars($userData['name']);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>
     <header class="header">
@@ -16,7 +39,7 @@
         </nav>
     </header>
     
-    <h1>Welcome Name <br> This is your Admin Dashboard</h1>
+    <h1>Welcome, <?php echo $adminName; ?>! <br> This is your Admin Dashboard</h1>
     <h3>Profile Dashboard</h3>
     <hr>
 
@@ -39,10 +62,8 @@
 
             $database = new Database();
             $repository = new ItineraryRepository($database->getConnection());
-            $userrepository = new UserRepository($database->getConnection());
 
             $itineraries = $repository->getAllItineraries();
-            $users = $userrepository->getAllUsers();
 
             if (count($itineraries) > 0) {
                 foreach ($itineraries as $itinerary) {

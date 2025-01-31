@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,8 +51,8 @@
         <button type="submit" class="btn-submit">Register</button>
     </div>
 </form>
-
-            
+<p>Already Have an Account?</p>
+    <a href="./CRUD/LogIn.php"> Log in</a>
         <div class="footer">
             <p>LOCAL<<<<<<<\WEBSITE<<<<<<<<<<<<<\PROJECT<<<<<<<<<<<<<<<<<<<<<\WEB<<<<<<\DESIGN<<<<<<<<\AND<<<<<<<<<<<<\ENGINEERING</p>
         </div>

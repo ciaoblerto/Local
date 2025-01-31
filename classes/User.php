@@ -22,6 +22,15 @@ class User {
         }
         return false;
     }
+    public function getUserByEmail($email) {
+        $query = "SELECT * FROM users WHERE email = :email LIMIT 1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+    
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
 
     public function login($email, $password) {
         $query = "SELECT user_id, name, surname, email, password, gender FROM {$this->table_name} WHERE email = :email";

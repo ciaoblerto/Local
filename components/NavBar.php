@@ -17,10 +17,16 @@
             <a href="Itineraries.php">Itineraries</a>
             <a href="AboutUs.php">About Us</a>
         </nav>
+
         <div class="registerButtons">
-            <button class="signIn"><a href="Register.php">Sign Up</a></button>
-            <button class="logIn"><a href="./CRUD/LogIn.php">Log In</a></button>
+            <?php if (isset($_SESSION['email'])): ?>
+                <button class="logOut"><a href="./CRUD/LogOut.php">Log Out</a></button>
+            <?php else: ?>
+                <button class="signIn"><a href="Register.php">Sign Up</a></button>
+                <button class="logIn"><a href="./CRUD/LogIn.php">Log In</a></button>
+            <?php endif; ?>
         </div>
+
         <button class="hamburgerMenu" aria-label="Toggle menu">
             ☰
         </button>
