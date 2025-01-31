@@ -1,5 +1,6 @@
 <?php
 include_once 'database.php';
+include_once 'Itinerary.php';
 
 class ItineraryRepository {
     private $connection;
@@ -8,14 +9,14 @@ class ItineraryRepository {
         $this->connection = $connection;
     }
 
-    function insertItinerary($itineraries) {
-        $sql = "INSERT INTO itineraries (Id, Fotoja, Titulli, Description) VALUES (:id, :fotoja, :titulli, :description)";
+    function insertItinerary(Itinerary $itinerary) {
+        $sql = "INSERT INTO itineraries (Fotoja, Titulli, Description, user_id) VALUES (:fotoja, :titulli, :description, :user_id)";
         $statement = $this->connection->prepare($sql);
         $statement->execute([
-            ':id' => $itineraries->getId(),
-            ':fotoja' => $itineraries->getFotoja(),
-            ':titulli' => $itineraries->getTitulli(),
-            ':description' => $itineraries->getDescription()
+            ':fotoja' => $itinerary->getFotoja(),
+            ':titulli' => $itinerary->getTitulli(),
+            ':description' => $itinerary->getDescription(),
+            ':user_id' => $itinerary->getUser_Id()
         ]);
 
         echo "<script>alert('Itinerary added successfully!');</script>";

@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itineraries</title>
-    <link rel="stylesheet" href="Itineraries.css">
-    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="./css/Itineraries.css">
     <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>    
@@ -98,23 +97,7 @@
                     <button class="view-plan-btn">View Plan</button>
                 </div>
     </section>
-    <footer>
-        <div class="socials">
-          <img class="social-icon" src="./assets/instakuku.png" alt="Instalogo">
-          <img class="social-icon" src="./assets/FB2-logo.png" alt="Xlogo">
-          <img class="social-icon" src="./assets/Youtube-logo.png" alt="Youtubelogo">
-          <img class="social-icon" src="./assets/Linkedin-logo-black.png" alt="Linkedinlogo">
-        </div>
-        <div class="footerContainer">
-          <ul>
-              <li><a href="HomePage.html"><b>Home</b></a></li>
-              <li><a href="Itineraries.html"><b>Itineraries</b></a></li>
-              <li><a href="AboutUs.html"><b>About us</b></a></li>
-              <li><a href=""><b>Our team</b></a></li>
-          </ul>
-        </div>
-        <p id="copyright">&copy; <span id="currentYear"></span> Local. All rights reserved.</p>
-      </footer>
+    <?php include ('components/Footer.html')?>
       <script>
         function showMore() {
             const hiddenBoxes = document.querySelectorAll('.popular-now .hidden');
@@ -124,7 +107,7 @@
             document.querySelector('.view-more-btn').style.display = 'none';
         }
     </script>
- <script src="Skript.js"></script>
+ <script src="js/Skript.js"></script>
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
