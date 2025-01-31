@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("Location: Register.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +15,7 @@
     <link rel="stylesheet" href="./css/AboutUs.css">
 </head>
 <body>
-<?php include ('components/NavBar.html')?>
+<?php include ('components/NavBar.php')?>
     <section class="about-header">
         <section class="about-text">
             <h1>About Us</h1>

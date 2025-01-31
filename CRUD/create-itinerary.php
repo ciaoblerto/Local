@@ -1,6 +1,12 @@
-<?php
+<?php 
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ErrorPage.php");
+    exit();
+}
+
 include_once 'database.php';
-include_once 'Itinerary.php';
+include_once '../classes/Itinerary.php';
 include_once '../classes/ItineraryRepository.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

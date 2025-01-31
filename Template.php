@@ -1,4 +1,10 @@
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("Location: Register.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
     <title>Template Itinerary</title>
 </head>
 <body>
-<?php include ('components/NavBar.html')?>
+<?php include ('components/NavBar.php')?>
     <section class="fillimi">
     <h1>A 3-Day Itinerary for Exploring the Magic of Prague</h1>
     <p>Welcome to my guide to Prague, the City of a Hundred Spires! Whether you're a first-time traveler or a seasoned explorer, this 3-day itinerary covers the must-see sights, best eats, and local gems of this enchanting city.</p>

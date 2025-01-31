@@ -11,8 +11,8 @@
 <body>
 <?php
 session_start();
-require 'database.php';
-require 'User.php';
+require '../CRUD/database.php';
+require '../classes/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
@@ -22,8 +22,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    if ($user->login($email, $password)) {
-        header("Location: ../HomePage.php");
+    $userData = $user->getUserByEmail($email);
+    
+    if ($userData && password_verify($password, $userData['password'])) {
+        $_SESSION['email'] = $email;
+
+        if (strpos($email, '@gmail.com') !== false) {
+            $_SESSION['role'] = 'admin';
+            header("Location: ../CRUD/Dashboard.php");
+        } elseif (strpos($email, '@ubt-uni.net') !== false) {
+            $_SESSION['role'] = 'user';
+            header("Location: ../HomePage.php");
+        } else {
+            $_SESSION['error'] = "Invalid email domain.";
+            header("Location: ../LogIn.php");
+        }
         exit;
     } else {
         echo "<script>alert('Invalid login credentials!');</script>";

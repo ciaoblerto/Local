@@ -1,3 +1,12 @@
+<?php 
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../ErrorPage.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="Dashboard.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>
     <header class="header">
