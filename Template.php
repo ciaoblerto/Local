@@ -16,11 +16,11 @@
 </head>
 <body>
 <?php include ('components/NavBar.php')?>
-    <section class="fillimi">
+    <div class="fillimi">
     <h1>A 3-Day Itinerary for Exploring the Magic of Prague</h1>
     <p>Welcome to my guide to Prague, the City of a Hundred Spires! Whether you're a first-time traveler or a seasoned explorer, this 3-day itinerary covers the must-see sights, best eats, and local gems of this enchanting city.</p>
     <img src="./assets/Prague.jpg" alt="">   
-</section>
+</div>
     <section class="day">
         <h2>Day 1: Arrival and Exploring Old Town</h2>
         <h6>Morning:</h6>
