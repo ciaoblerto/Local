@@ -62,8 +62,10 @@ if (isset($_SESSION['email'])) {
 
             $database = new Database();
             $repository = new ItineraryRepository($database->getConnection());
+            $userrepository = new UserRepository($database->getConnection());
 
             $itineraries = $repository->getAllItineraries();
+            $users = $userrepository->getAllUsers();
 
             if (count($itineraries) > 0) {
                 foreach ($itineraries as $itinerary) {
