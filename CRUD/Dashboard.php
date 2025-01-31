@@ -35,10 +35,14 @@
             <?php
             require_once("database.php");
             require_once("../classes/ItineraryRepository.php");
+            require_once("UserRepository.php");
 
             $database = new Database();
             $repository = new ItineraryRepository($database->getConnection());
+            $userrepository = new UserRepository($database->getConnection());
+
             $itineraries = $repository->getAllItineraries();
+            $users = $userrepository->getAllUsers();
 
             if (count($itineraries) > 0) {
                 foreach ($itineraries as $itinerary) {
@@ -61,7 +65,50 @@
                 echo "<tr><td colspan='5'>No itineraries found.</td></tr>";
             }
             ?>
-        </tbody>
+              </tbody>
+        </table>
+        <hr>
+
+    
+        <h3>Users Dashboard</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            </tbody>
+            </tbody>
+
+            <?php
+            if (is_array($users) || $users instanceof Countable) {
+                if (count($users) > 0) {
+                    foreach ($users as $user) {
+                        echo "<tr>";
+                        echo "<td>" . $user['user_id'] . "</td>";
+                        echo "<td>" . htmlspecialchars($user['name']) . "</td>";
+                        echo "<td>" . htmlspecialchars($user['email']) . "</td>";
+                        echo "<td>" . htmlspecialchars($user['role']) . "</td>";
+                        echo "<td>
+                    <a href='edit-user.php?id=" . htmlspecialchars($user['user_id']) . "'>Edit</a> |
+                    <a href='delete-user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> |
+                    <a href='change-role.php?id=" . htmlspecialchars($user['user_id']) . "&role=admin'>Make Admin</a> |
+                    <a href='change-role.php?id=" . htmlspecialchars($user['user_id']) . "&role=user'>Make User</a>
+                </td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>No users found.</td></tr>";
+        }
+    } else {
+        echo "<tr><td colspan='5'>Error: Users data is not available.</td></tr>";
+    }
+?>
+
     </table>
     <hr>
     <div classname="cr-it">
