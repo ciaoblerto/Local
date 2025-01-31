@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local</title>
-    <link rel="stylesheet" href="./css/HomePage.css">
+    <link rel="stylesheet" href="HomePage.css">
     <link rel="icon" href="favicon.ico" type="image/ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
 </head>

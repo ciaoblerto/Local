@@ -12,7 +12,7 @@
 <?php
 session_start();
 require 'database.php';
-require 'User.php';
+require '../classes/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
