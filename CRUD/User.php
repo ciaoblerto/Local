@@ -12,7 +12,6 @@ class User {
 
         $stmt = $this->conn->prepare($query);
 
-        // Bind parameters
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':surname', $surname);
         $stmt->bindParam(':email', $email);
@@ -25,24 +24,28 @@ class User {
     }
 
     public function login($email, $password) {
-        $query = "SELECT id, name, surname, email, password, gender FROM {$this->table_name} WHERE email = :email";
-
+        $query = "SELECT user_id, name, surname, email, password, gender FROM {$this->table_name} WHERE email = :email";
+    
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
-        // Check if a record exists
-        if ($stmt->rowCount() > 0) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($password, $row['password'])) {
-                // Start the session and store user data
-                session_start();
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['email'] = $row['email'];
-                return true;
-            }
+    
+        if ($stmt->rowCount() == 0) {
+            return false;
         }
-        return false;
-    }
+    
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        if (!password_verify($password, $row['password'])) {
+            return false;
+        }
+    
+        session_start();
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['name'] = $row['name'];
+    
+        return true;
+    }    
 }
 ?>

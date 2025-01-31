@@ -9,6 +9,27 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+<?php
+session_start();
+require 'database.php';
+require 'User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if ($user->login($email, $password)) {
+        header("Location: ../HomePage.php");
+        exit;
+    } else {
+        echo "<script>alert('Invalid login credentials!');</script>";
+    }
+}
+?>
     <div class="boarding-pass">
         <div class="header">
             <div class="icon">✈️</div>
@@ -16,13 +37,13 @@
             <div class="sub-title">Boarding pass</div>
         </div>
         <div class="wrapper">
-            <form action="HomePage.php">
+            <form action="LogIn.php" method="POST">
                 <div class="input-box">
                     <label>Email</label>
                     <br>
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
                     <label>Password</label>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="remember-me-forgot">
                     <label><input type="checkbox">Remember me</label>
@@ -30,7 +51,7 @@
                 </div>
                 <button type="submit" class="button">Login</button>
                 <div class="register">
-                    <p>Don't have an account? <a href="Register.html">Register</a></p>
+                    <p>Don't have an account? <a href="../Register.php">Register</a></p>
                 </div>
             </form>
             <div class="djatht">
