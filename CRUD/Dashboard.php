@@ -5,6 +5,19 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
+require_once("../CRUD/database.php");
+require_once("../classes/User.php");
+
+$database = new Database();
+$connection = $database->getConnection();
+$user = new User($connection);
+
+if (isset($_SESSION['email'])) {
+    $userData = $user->getUserByEmail($_SESSION['email']);
+    if ($userData && isset($userData['name'])) {
+        $adminName = htmlspecialchars($userData['name']);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +39,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         </nav>
     </header>
     
-    <h1>Welcome Name <br> This is your Admin Dashboard</h1>
+    <h1>Welcome, <?php echo $adminName; ?>! <br> This is your Admin Dashboard</h1>
     <h3>Profile Dashboard</h3>
     <hr>
 
@@ -49,10 +62,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
             $database = new Database();
             $repository = new ItineraryRepository($database->getConnection());
-            $userrepository = new UserRepository($database->getConnection());
 
             $itineraries = $repository->getAllItineraries();
-            $users = $userrepository->getAllUsers();
 
             if (count($itineraries) > 0) {
                 foreach ($itineraries as $itinerary) {

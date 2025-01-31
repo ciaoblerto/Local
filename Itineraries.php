@@ -16,7 +16,7 @@
     <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>    
-    <?php include('components/NavBar.html'); ?>
+    <?php include('components/NavBar.php'); ?>
 
     <section class="itineraries-header">
         <div class="header-text">
