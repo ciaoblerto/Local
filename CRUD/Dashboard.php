@@ -120,29 +120,42 @@ if (isset($_SESSION['email'])) {
             </thead>
             </tbody>
             </tbody>
+        <?php
+        if (is_array($users) || $users instanceof Countable) {
+            if (count($users) > 0) {
+                foreach ($users as $user) {
+                    echo "<tr>";
+                    echo "<td>" . $user['user_id'] . "</td>";
+                    echo "<td>" . htmlspecialchars($user['name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($user['email']) . "</td>";
 
-            <?php
-            if (is_array($users) || $users instanceof Countable) {
-                if (count($users) > 0) {
-                    foreach ($users as $user) {
-                        echo "<tr>";
-                        echo "<td>" . $user['user_id'] . "</td>";
-                        echo "<td>" . htmlspecialchars($user['name']) . "</td>";
-                        echo "<td>" . htmlspecialchars($user['email']) . "</td>";
-                        echo "<td>" . htmlspecialchars($user['role']) . "</td>";
-                        echo "<td>
-                    <a href='edit-user.php?id=" . htmlspecialchars($user['user_id']) . "'>Edit</a> |
-                    <a href='delete-user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> 
-                </td>";
-                echo "</tr>";
+                    $role = '';
+                    if (strpos($user['email'], '@gmail.com') !== false) {
+                        $role = 'Admin';
+                    } elseif (strpos($user['email'], '@ubt-uni.net') !== false) {
+                        $role = 'User';
+                    } else {
+                        $role = 'Unknown Role';
+                    }
+
+                    echo "<td>" . $role . "</td>";
+                    echo "<td>
+                            <a href='edit-user.php?id=" . htmlspecialchars($user['user_id']) . "'>Edit</a> |
+                            <a href='delete_user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> 
+                          </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>No users found.</td></tr>";
             }
         } else {
-            echo "<tr><td colspan='5'>No users found.</td></tr>";
+            echo "<tr><td colspan='5'>Error: Users data is not available.</td></tr>";
         }
-    } else {
-        echo "<tr><td colspan='5'>Error: Users data is not available.</td></tr>";
-    }
-?>
+        ?>
+    </tbody>
+</table>
+<hr>
+
 
     </table>
     <hr>
