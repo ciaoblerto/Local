@@ -132,9 +132,7 @@ if (isset($_SESSION['email'])) {
                         echo "<td>" . htmlspecialchars($user['role']) . "</td>";
                         echo "<td>
                     <a href='edit-user.php?id=" . htmlspecialchars($user['user_id']) . "'>Edit</a> |
-                    <a href='delete-user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> |
-                    <a href='change-role.php?id=" . htmlspecialchars($user['user_id']) . "&role=admin'>Make Admin</a> |
-                    <a href='change-role.php?id=" . htmlspecialchars($user['user_id']) . "&role=user'>Make User</a>
+                    <a href='delete-user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> 
                 </td>";
                 echo "</tr>";
             }

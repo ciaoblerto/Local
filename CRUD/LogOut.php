@@ -1,6 +1,7 @@
 <?php
 session_start();
-session_destroy(); // Destroy all sessions
-header("Location: ../Register.php"); // Redirect to Register page after logout
+session_unset();
+session_destroy(); 
+header("Location: ../Register.php");
 exit();
 ?>
