@@ -17,7 +17,6 @@ if (isset($_GET['id'])) {
     $userId = $_GET['id'];
     $user = $userRepository->getUserById($userId);
 
-    // Check if the user exists
     if (!$user) {
         echo "User not found!";
         exit();

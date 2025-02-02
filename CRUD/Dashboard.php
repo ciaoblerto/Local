@@ -129,6 +129,7 @@ if (isset($_SESSION['email'])) {
                     echo "<td>" . htmlspecialchars($user['name']) . "</td>";
                     echo "<td>" . htmlspecialchars($user['email']) . "</td>";
 
+<<<<<<< HEAD
                     $role = '';
                     if (strpos($user['email'], '@gmail.com') !== false) {
                         $role = 'Admin';
@@ -147,6 +148,22 @@ if (isset($_SESSION['email'])) {
                 }
             } else {
                 echo "<tr><td colspan='5'>No users found.</td></tr>";
+=======
+            <?php
+            if (is_array($users) || $users instanceof Countable) {
+                if (count($users) > 0) {
+                    foreach ($users as $user) {
+                        echo "<tr>";
+                        echo "<td>" . $user['user_id'] . "</td>";
+                        echo "<td>" . htmlspecialchars($user['name']) . "</td>";
+                        echo "<td>" . htmlspecialchars($user['email']) . "</td>";
+                        echo "<td>" . htmlspecialchars($user['role']) . "</td>";
+                        echo "<td>
+                    <a href='edit-user.php?id=" . htmlspecialchars($user['user_id']) . "'>Edit</a> |
+                    <a href='delete_user.php?id=" . htmlspecialchars($user['user_id']) . "' onclick='return confirm(\"Are you sure?\");'>Delete</a> 
+                </td>";
+                echo "</tr>";
+>>>>>>> bb005ce91aa66bb297da40e211d27bdefe365b2e
             }
         } else {
             echo "<tr><td colspan='5'>Error: Users data is not available.</td></tr>";
