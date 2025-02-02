@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($user->register($name, $surname, $email, $password, $gender, $role)) {
-        // Set session variables
+        
         $_SESSION['email'] = $email;
         $_SESSION['role'] = $role;
 
-        // Redirect based on role
+        
         if ($role === 'admin') {
             header("Location: Dashboard.php");
         } else {
